@@ -14,9 +14,9 @@
 = Introducción a Kotlin
 
 #align(center)[
-  _By Alejandro Gomez Florez (\@aldajo92)_
+  _By Alejandro Gomez Florez (\@aldajo92)_ \
   _Ingeniero de Control | Ms Matemáticas aplicadas_
-
+  _Universidad Nacional de Colombia | EAFIT_
 ]
 
 >| Guia en desarrollo.
@@ -541,6 +541,14 @@ fun main(args: Array<String>) {
    }
 }
 ```
+
+== Ejercicios
+
+Crees ser capaz de resolver los siguientes ejercicios?
+
+https://leetcode.com/problems/convert-the-temperature
+https://leetcode.com/problems/length-of-last-word
+
 
 
 // == Operadores

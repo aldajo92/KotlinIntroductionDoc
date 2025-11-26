@@ -542,12 +542,118 @@ fun main(args: Array<String>) {
 }
 ```
 
+Aca les dejo un enlace de algunos ejemplos para ejecutar en el playground de Kotlin:
+#link("https://pl.kotl.in/-VEJh7fdl")
+
 == Ejercicios
 
 Crees ser capaz de resolver los siguientes ejercicios?
 
-https://leetcode.com/problems/convert-the-temperature
-https://leetcode.com/problems/length-of-last-word
+- #link("https://leetcode.com/problems/convert-the-temperature")
+- #link("https://leetcode.com/problems/length-of-last-word")
+
+Aca les dejo un enlace de algunos ejemplos para ejecutar en el playground de Kotlin:
+#link("https://pl.kotl.in/-VEJh7fdl")
+
+
+Los loops se usan para repetir un bloque de código un número determinado de veces. En Kotlin, se pueden usar las palabras reservadas: `for`, `while`, `do-while`.
+
+Loop `for` con rango (1 al 5):
+```kotlin
+for (i in 1..5) {
+    println("El número es $i")
+}
+// Imprime: 1, 2, 3, 4, 5
+```
+
+Loop `for` con rango descendente:
+```kotlin
+for (i in 5 downTo 1) {
+    println("El número es $i")
+}
+// Imprime: 5, 4, 3, 2, 1
+```
+
+Loop `for` con pasos (incremento de 2):
+```kotlin
+for (i in 0..10 step 2) {
+    println("El número es $i")
+}
+// Imprime: 0, 2, 4, 6, 8, 10
+```
+
+Loop `for` iterando sobre un array:
+```kotlin
+val frutas = arrayOf("Manzana", "Banana", "Naranja")
+for (fruta in frutas) {
+    println("Fruta: $fruta")
+}
+// Imprime cada fruta del array
+```
+
+Loop `for` con índice y valor:
+```kotlin
+val colores = listOf("Rojo", "Verde", "Azul")
+for ((indice, color) in colores.withIndex()) {
+    println("Color $indice: $color")
+}
+// Imprime: Color 0: Rojo, Color 1: Verde, Color 2: Azul
+```
+
+Loop `while`:
+```kotlin
+var i = 1
+while (i <= 5) {
+    println("El número es $i")
+    i++
+}
+// Imprime: 1, 2, 3, 4, 5
+```
+
+Loop `do-while` (ejecuta al menos una vez):
+```kotlin
+var contador = 1
+do {
+    println("Contador: $contador")
+    contador++
+} while (contador <= 3)
+// Imprime: Contador: 1, Contador: 2, Contador: 3
+```
+
+Uso de `break` para salir del loop:
+```kotlin
+for (i in 1..10) {
+    if (i == 5) {
+        break  // Sale del loop cuando i es 5
+    }
+    println(i)
+}
+// Imprime: 1, 2, 3, 4
+```
+
+Uso de `continue` para saltar una iteración:
+```kotlin
+for (i in 1..5) {
+    if (i == 3) {
+        continue  // Salta la iteración cuando i es 3
+    }
+    println(i)
+}
+// Imprime: 1, 2, 4, 5 (se salta el 3)
+```
+
+Ejemplo práctico - Suma de números pares:
+```kotlin
+var suma = 0
+for (i in 1..10) {
+    if (i % 2 == 0) {
+        suma += i
+    }
+}
+println("La suma de números pares del 1 al 10 es: $suma")
+// Imprime: La suma de números pares del 1 al 10 es: 30
+```
+
 
 
 

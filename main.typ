@@ -654,10 +654,137 @@ println("La suma de números pares del 1 al 10 es: $suma")
 // Imprime: La suma de números pares del 1 al 10 es: 30
 ```
 
+== Ejemplos
+
+Secuencia de Fibonacci usando un loop `for`:
+
+```kotlin
+fun main() {
+    val n = 10
+    val fibonacci = mutableListOf(0, 1)
+    for (i in 2..n) {
+        fibonacci.add(fibonacci[i-1] + fibonacci[i-2])
+    }
+}
+```
+
+Sumar elementos de un array:
+```kotlin
+fun main() {
+    val array = arrayOf(1, 2, 3, 4, 5)
+    var suma = 0
+    for (i in array) {
+        suma += i
+    }
+}
+```
+
+Buscar un elemento en un array:
+```kotlin
+fun main() {
+    val array = arrayOf(1, 2, 3, 4, 5)
+    val elemento = 3
+    if (elemento in array) {
+        println("El elemento $elemento se encuentra en el array")
+    }
+}
+```
+
+Recorrer un array en orden inverso usando índices:
+```kotlin
+fun main() {
+    val array = arrayOf(1, 2, 3, 4, 5)
+    for (i in array.size - 1 downTo 0) {
+        println(array[i])
+    }
+}
+// Imprime: 5, 4, 3, 2, 1
+```
+
+Recorrer un array en orden inverso usando el método `reversed()`:
+```kotlin
+fun main() {
+    val array = arrayOf(1, 2, 3, 4, 5)
+    for (i in array.reversed()) {
+        println(i)
+    }
+}
+```
+
+Calcular el promedio de un array:
+```kotlin
+fun main() {
+    val array = arrayOf(1, 2, 3, 4, 5)
+    val promedio = array.average()
+    println(promedio)
+}
+```
+
+Obtener la mediana de un array:
+```kotlin
+fun main() {
+    val array = arrayOf(1, 2, 3, 4, 5)
+    val mediana = array.sorted()[array.size / 2]
+    println(mediana)
+}
+```
+
+Programa para calcular n numeros primos:
+
+```kotlin
+// Función para verificar si un número es primo
+fun esPrimo(numero: Int): Boolean {
+    if (numero <= 1) return false
+    if (numero == 2) return true
+    if (numero % 2 == 0) return false
+
+    for (i in 3..Math.sqrt(numero.toDouble()).toInt() step 2) {
+        if (numero % i == 0) {
+            return false
+        }
+    }
+    return true
+}
+
+// Función para encontrar los primeros n números primos
+fun encontrarPrimos(n: Int): List<Int> {
+    val primos = mutableListOf<Int>()
+    var numero = 2
+
+    while (primos.size < n) {
+        if (esPrimo(numero)) {
+            primos.add(numero)
+        }
+        numero++
+    }
+
+    return primos
+}
+
+// Ejemplo de uso
+fun main() {
+    val cantidadPrimos = 10
+    val primos = encontrarPrimos(cantidadPrimos)
+
+    println("Los primeros $cantidadPrimos números primos son:")
+    println(primos)
+
+    // Verificar si un número específico es primo
+    val numeroAVerificar = 17
+    if (esPrimo(numeroAVerificar)) {
+        println("$numeroAVerificar es un número primo")
+    } else {
+        println("$numeroAVerificar no es un número primo")
+    }
+}
+// Imprime: Los primeros 10 números primos son:
+// [2, 3, 5, 7, 11, 13, 17, 19, 23, 29]
+// 17 es un número primo
+```
 
 
 
-// == Operadores
+
 
 // == Tables and Wraps
 

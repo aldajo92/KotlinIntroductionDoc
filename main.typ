@@ -270,6 +270,38 @@ fun main() {
 }
 ```
 
+=== Ejemplos
+
+```kotlin
+fun main(){
+    hola()
+    sumatory(10,11)
+    val saludo = hi()
+    print(saludo)
+}
+
+// No reciben parametros y no retornan algo
+fun hola(){
+    println("Hola")
+}
+
+// reciben parametros y no retornan algo
+fun sumatory(a: Int, b: Int) {
+    val result = a+b
+    println(result)
+}
+
+// No reciben parametros y retornan algo
+fun hi(): String {
+    return "Hi"
+}
+
+// reciben parametros y retornan algo
+fun sum(a: Int, b: Int): Int {
+    val result = a+b
+    return result
+}
+
 
 == Arrays & Collections
 

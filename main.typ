@@ -314,7 +314,7 @@ Arrays en Kotlin se definen usando las funciones `arrayOf`, `intArrayOf`, `doubl
 ```
 
 Los arrays, en general, son un tipo de estructura de dato que permite almacenar un conjunto de elementos del mismo tipo, con un tamaño fijo. En Kotlin los arrays son *mutables en su contenido* (se puede hacer `array[i] = nuevoValor`), pero su *tamaño es inmutable*: no se pueden agregar o eliminar posiciones sin crear un nuevo array. Se pueden declarar de diferentes maneras:
-```kotlin
+````kotlin
 // 1. Usando arrayOf con valores iniciales
 val array1 = arrayOf(1, 2, 3, 4, 5)
 
@@ -333,7 +333,7 @@ val array5 = Array(5) { i -> i * i } // [0, 1, 4, 9, 16]
 // 6. Usando emptyArray para un array vacío, luego se puede llenar
 val array6 = emptyArray<String>()
 
-```
+````
 
 Acceso a los elementos de un array:
 ```kotlin
@@ -369,7 +369,7 @@ Tamaño de un array:
 
 En Kotlin, las *collections* permiten almacenar y gestionar conjuntos de elementos del mismo tipo, con tamaño variable. Existen colecciones *inmutables* (solo lectura), como `List`, `Set` y `Map`, que se crean con `listOf`, `setOf` y `mapOf`, y colecciones *mutables* que permiten modificar su contenido, como `MutableList`, `MutableSet` y `MutableMap`, creadas con `mutableListOf`, `mutableSetOf` y `mutableMapOf`:
 
-```kotlin
+````kotlin
     // Lista inmutable (permite elementos repetidos)
     val list: List<Int> = listOf(1, 2, 3, 4, 5)
     // Set inmutable (no permite elementos repetidos)
@@ -383,7 +383,7 @@ En Kotlin, las *collections* permiten almacenar y gestionar conjuntos de element
     val mutableSet: MutableSet<String> = mutableSetOf("one", "two", "three")
     // Map mutable
     val mutableMap: MutableMap<String, Int> = mutableMapOf("one" to 1, "two" to 2, "three" to 3)
-```
+````
 
 Acceso a los elementos de una collection:
 ```kotlin
@@ -763,7 +763,7 @@ fun main() {
 
 Programa para calcular n numeros primos:
 
-```kotlin
+````kotlin
 // Función para verificar si un número es primo
 fun esPrimo(numero: Int): Boolean {
     if (numero <= 1) return false
@@ -812,7 +812,7 @@ fun main() {
 // Imprime: Los primeros 10 números primos son:
 // [2, 3, 5, 7, 11, 13, 17, 19, 23, 29]
 // 17 es un número primo
-```
+````
 
 
 

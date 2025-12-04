@@ -887,3 +887,82 @@ class Persona {
     }
 }
 ````
+
+
+== Ejecutando comandos en consola con Kotlin
+
+=== Compilar un archivo .kt a .class
+
+Para compilar un archivo Kotlin:
+
+```bash
+kotlinc Main.kt
+```
+
+Esto genera un archivo `.class` (por ejemplo: `MainKt.class`)
+
+Ejemplo de archivo `Main.kt`:
+````kotlin
+fun main() {
+    println("¡Hola desde Kotlin!")
+}
+````
+
+=== Ejecutar el archivo compilado
+
+Para ejecutar el archivo `.class` generado:
+
+```bash
+kotlin MainKt
+```
+
+Nota: El nombre de la clase es el nombre del archivo con "Kt" al final (ej: `Main.kt` → `MainKt`)
+
+=== Ejemplo completo
+
+```bash
+# 1. Crear archivo Main.kt
+# 2. Compilar
+kotlinc Main.kt
+
+# 3. Ejecutar
+kotlin MainKt
+```
+
+Salida:
+```
+¡Hola desde Kotlin!
+```
+
+=== Compilar a un archivo JAR
+
+Si quieres crear un archivo JAR ejecutable:
+
+```bash
+kotlinc Main.kt -include-runtime -d Main.jar
+```
+
+*Opciones:*
+- `-include-runtime`: Incluye las bibliotecas de Kotlin en el JAR
+- `-d Main.jar`: Especifica el nombre del archivo de salida
+
+Ejecutar el JAR:
+
+```bash
+java -jar Main.jar
+```
+
+Ejemplo completo:
+
+```bash
+# 1. Compilar a JAR
+kotlinc Main.kt -include-runtime -d Main.jar
+
+# 2. Ejecutar el JAR
+java -jar Main.jar
+```
+
+Salida:
+```
+¡Hola desde Kotlin!
+```

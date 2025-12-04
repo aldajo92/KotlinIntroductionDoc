@@ -189,7 +189,7 @@ fun main() {
 Funciones con parámetros:
 ````kotlin
 fun saludar(nombre: String) {
-    println("¡Hola, " + nombre + "!")
+    println("¡Hola, $nombre!")
 }
 
 fun main() {
@@ -202,7 +202,7 @@ Funciones con múltiples parámetros:
 ````kotlin
 fun sumar(a: Int, b: Int) {
     val resultado = a + b
-    println("La suma es: " + resultado)
+    println("La suma es: $resultado")
 }
 
 fun main() {
@@ -226,7 +226,7 @@ fun main() {
 Funciones con parámetros por defecto:
 ````kotlin
 fun saludar(nombre: String = "Usuario", edad: Int = 0) {
-    println("Hola " + nombre + ", tienes " + edad + " años")
+    println("Hola $nombre, tienes $edad años")
 }
 
 fun main() {
@@ -454,7 +454,7 @@ Template strings:
 ````kotlin
     val name = "Juan"
     val age = 20
-    val str = "Hola, " + name + "! Tienes " + age + " años."
+    val str = "Hola, $name! Tienes $age años."
     println(str) // Imprime "Hola, Juan! Tienes 20 años."
 ````
 
@@ -526,7 +526,7 @@ fun main(args: Array<String>) {
         } else if (comando == "salir") {
             println("¡Hasta luego!")
         } else {
-            println("Comando no reconocido: " + comando)
+            println("Comando no reconocido: $comando")
         }
     }
 }
@@ -551,7 +551,7 @@ fun main(args: Array<String>) {
    } else if (comando == "salir") {
        println("¡Hasta luego!")
    } else {
-       println("Comando no reconocido: " + comando)
+       println("Comando no reconocido: $comando")
    }
 ````
 
@@ -594,7 +594,7 @@ Los loops se usan para repetir un bloque de código un número determinado de ve
 Loop `for` con rango (1 al 5):
 ````kotlin
 for (i in 1..5) {
-    println("El número es " + i)
+    println("El número es $i")
 }
 // Imprime: 1, 2, 3, 4, 5
 ````
@@ -602,7 +602,7 @@ for (i in 1..5) {
 Loop `for` con rango descendente:
 ````kotlin
 for (i in 5 downTo 1) {
-    println("El número es " + i)
+    println("El número es $i")
 }
 // Imprime: 5, 4, 3, 2, 1
 ````
@@ -610,7 +610,7 @@ for (i in 5 downTo 1) {
 Loop `for` con pasos (incremento de 2):
 ````kotlin
 for (i in 0..10 step 2) {
-    println("El número es " + i)
+    println("El número es $i")
 }
 // Imprime: 0, 2, 4, 6, 8, 10
 ````
@@ -619,7 +619,7 @@ Loop `for` iterando sobre un array:
 ````kotlin
 val frutas = arrayOf("Manzana", "Banana", "Naranja")
 for (fruta in frutas) {
-    println("Fruta: " + fruta)
+    println("Fruta: $fruta")
 }
 // Imprime cada fruta del array
 ````
@@ -628,7 +628,7 @@ Loop `for` con índice y valor:
 ````kotlin
 val colores = listOf("Rojo", "Verde", "Azul")
 for ((indice, color) in colores.withIndex()) {
-    println("Color " + indice + ": " + color)
+    println("Color $indice: $color")
 }
 // Imprime: Color 0: Rojo, Color 1: Verde, Color 2: Azul
 ````
@@ -637,7 +637,7 @@ Loop `while`:
 ````kotlin
 var i = 1
 while (i <= 5) {
-    println("El número es " + i)
+    println("El número es $i")
     i++
 }
 // Imprime: 1, 2, 3, 4, 5
@@ -647,7 +647,7 @@ Loop `do-while` (ejecuta al menos una vez):
 ````kotlin
 var contador = 1
 do {
-    println("Contador: " + contador)
+    println("Contador: $contador")
     contador++
 } while (contador <= 3)
 // Imprime: Contador: 1, Contador: 2, Contador: 3
@@ -683,7 +683,7 @@ for (i in 1..10) {
         suma += i
     }
 }
-println("La suma de números pares del 1 al 10 es: " + suma)
+println("La suma de números pares del 1 al 10 es: $suma")
 // Imprime: La suma de números pares del 1 al 10 es: 30
 ````
 
@@ -718,7 +718,7 @@ fun main() {
     val array = arrayOf(1, 2, 3, 4, 5)
     val elemento = 3
     if (elemento in array) {
-        println("El elemento " + elemento + " se encuentra en el array")
+        println("El elemento $elemento se encuentra en el array")
     }
 }
 ````
@@ -820,7 +820,7 @@ fun main() {
 == Clases y Objetos
 
 La siguiente es una forma de definir una clase en Kotlin:
-```kotlin
+````kotlin
 fun main() {
     val persona = Persona("Juan", 25)
     println(persona.nombre)
@@ -833,11 +833,37 @@ class Persona(val nombre: String, var edad: Int) {
         println("Hola, soy $nombre y tengo $edad años")
     }
 }
-
-```
+````
 
 Usando el constructor secundario:
-```kotlin
+````kotlin
+fun main() {
+    // Usando constructor primario
+    val persona1 = Persona("Juan", 25)
+    println(persona1.nombre)
+    println(persona1.edad)
+
+    // Usando constructor secundario
+    val persona2 = Persona("María")
+    println(persona2.nombre)
+    println(persona2.edad)
+}
+
+class Persona(val nombre: String, var edad: Int) {
+    // Constructor secundario con un solo parámetro
+    constructor(nombre: String) : this(nombre, 0) {
+        println("Constructor secundario llamado")
+    }
+
+    fun saludar() {
+        println("Hola, soy $nombre")
+    }
+}
+````
+
+Clase sin constructor primario (solo secundario):
+
+````kotlin
 fun main() {
     val persona = Persona("Juan", 25)
     println(persona.nombre)
@@ -845,30 +871,19 @@ fun main() {
     persona.saludar()
 }
 
-class Persona(val nombre: String, var edad: Int) {
-    constructor(nombre: String) : this(nombre, 0) {
-        println("Constructor secundario llamado")
-    }
-}
-```
+class Persona {
+    var nombre: String = ""
+    var edad: Int = 0
 
-Usando el constructor secundario (alternativo):
-
-```kotlin
-fun main() {
-    val persona = Persona("Juan")
-    println(persona.nombre)
-    println(persona.edad)
-    persona.saludar()
-}
-
-class Persona(val nombre: String, var edad: Int) {
-    var nombre : String = ""
-    var edad : Int = 0
+    // Constructor secundario
     constructor(nombre: String, edad: Int) {
         this.nombre = nombre
         this.edad = edad
         println("Constructor secundario llamado")
     }
+
+    fun saludar() {
+        println("Hola, soy $nombre y tengo $edad años")
+    }
 }
-```
+````

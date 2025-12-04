@@ -187,29 +187,29 @@ fun main() {
 ```
 
 Funciones con parámetros:
-```kotlin
+````kotlin
 fun saludar(nombre: String) {
-    println("¡Hola, $nombre!")
+    println("¡Hola, " + nombre + "!")
 }
 
 fun main() {
     saludar("Juan")  // Imprime: ¡Hola, Juan!
     saludar("María") // Imprime: ¡Hola, María!
 }
-```
+````
 
 Funciones con múltiples parámetros:
-```kotlin
+````kotlin
 fun sumar(a: Int, b: Int) {
     val resultado = a + b
-    println("La suma es: $resultado")
+    println("La suma es: " + resultado)
 }
 
 fun main() {
     sumar(5, 3)   // Imprime: La suma es: 8
     sumar(10, 20) // Imprime: La suma es: 30
 }
-```
+````
 
 Funciones con valor de retorno:
 ```kotlin
@@ -224,9 +224,9 @@ fun main() {
 ```
 
 Funciones con parámetros por defecto:
-```kotlin
+````kotlin
 fun saludar(nombre: String = "Usuario", edad: Int = 0) {
-    println("Hola $nombre, tienes $edad años")
+    println("Hola " + nombre + ", tienes " + edad + " años")
 }
 
 fun main() {
@@ -235,7 +235,7 @@ fun main() {
     saludar("Carlos", 25)        // Imprime: Hola Carlos, tienes 25 años
     saludar(edad = 30, nombre = "Luis") // Argumentos con nombre
 }
-```
+````
 
 Funciones de expresión única:
 ```kotlin
@@ -301,6 +301,7 @@ fun sum(a: Int, b: Int): Int {
     val result = a+b
     return result
 }
+```
 
 
 == Arrays & Collections
@@ -450,12 +451,12 @@ Concatenación de strings:
 ```
 
 Template strings:
-```kotlin
+````kotlin
     val name = "Juan"
     val age = 20
-    val str = "Hola, $name! Tienes $age años."
+    val str = "Hola, " + name + "! Tienes " + age + " años."
     println(str) // Imprime "Hola, Juan! Tienes 20 años."
-```
+````
 
 Busqueda de subcadenas:
 ```kotlin
@@ -509,7 +510,7 @@ El control flow se refiere a la forma en la que se condiciona el flujo de ejecuc
 ```
 
 Ejemplo práctico con argumentos y flujo de control:
-```kotlin
+````kotlin
 fun main(args: Array<String>) {
     // Verificar si hay argumentos
     if (args.isEmpty()) {
@@ -525,14 +526,14 @@ fun main(args: Array<String>) {
         } else if (comando == "salir") {
             println("¡Hasta luego!")
         } else {
-            println("Comando no reconocido: $comando")
+            println("Comando no reconocido: " + comando)
         }
     }
 }
-```
+````
 
 Una forma mas optima:
-```kotlin
+````kotlin
 fun main(args: Array<String>) {
    // Verificar si hay argumentos
    if (args.isEmpty()) {
@@ -550,9 +551,9 @@ fun main(args: Array<String>) {
    } else if (comando == "salir") {
        println("¡Hasta luego!")
    } else {
-       println("Comando no reconocido: $comando")
+       println("Comando no reconocido: " + comando)
    }
-```
+````
 
 Ejemplo con números:
 ```kotlin
@@ -591,66 +592,66 @@ Aca les dejo un enlace de algunos ejemplos para ejecutar en el playground de Kot
 Los loops se usan para repetir un bloque de código un número determinado de veces. En Kotlin, se pueden usar las palabras reservadas: `for`, `while`, `do-while`.
 
 Loop `for` con rango (1 al 5):
-```kotlin
+````kotlin
 for (i in 1..5) {
-    println("El número es $i")
+    println("El número es " + i)
 }
 // Imprime: 1, 2, 3, 4, 5
-```
+````
 
 Loop `for` con rango descendente:
-```kotlin
+````kotlin
 for (i in 5 downTo 1) {
-    println("El número es $i")
+    println("El número es " + i)
 }
 // Imprime: 5, 4, 3, 2, 1
-```
+````
 
 Loop `for` con pasos (incremento de 2):
-```kotlin
+````kotlin
 for (i in 0..10 step 2) {
-    println("El número es $i")
+    println("El número es " + i)
 }
 // Imprime: 0, 2, 4, 6, 8, 10
-```
+````
 
 Loop `for` iterando sobre un array:
-```kotlin
+````kotlin
 val frutas = arrayOf("Manzana", "Banana", "Naranja")
 for (fruta in frutas) {
-    println("Fruta: $fruta")
+    println("Fruta: " + fruta)
 }
 // Imprime cada fruta del array
-```
+````
 
 Loop `for` con índice y valor:
-```kotlin
+````kotlin
 val colores = listOf("Rojo", "Verde", "Azul")
 for ((indice, color) in colores.withIndex()) {
-    println("Color $indice: $color")
+    println("Color " + indice + ": " + color)
 }
 // Imprime: Color 0: Rojo, Color 1: Verde, Color 2: Azul
-```
+````
 
 Loop `while`:
-```kotlin
+````kotlin
 var i = 1
 while (i <= 5) {
-    println("El número es $i")
+    println("El número es " + i)
     i++
 }
 // Imprime: 1, 2, 3, 4, 5
-```
+````
 
 Loop `do-while` (ejecuta al menos una vez):
-```kotlin
+````kotlin
 var contador = 1
 do {
-    println("Contador: $contador")
+    println("Contador: " + contador)
     contador++
 } while (contador <= 3)
 // Imprime: Contador: 1, Contador: 2, Contador: 3
-```
+````
 
 Uso de `break` para salir del loop:
 ```kotlin
@@ -675,22 +676,22 @@ for (i in 1..5) {
 ```
 
 Ejemplo práctico - Suma de números pares:
-```kotlin
+````kotlin
 var suma = 0
 for (i in 1..10) {
     if (i % 2 == 0) {
         suma += i
     }
 }
-println("La suma de números pares del 1 al 10 es: $suma")
+println("La suma de números pares del 1 al 10 es: " + suma)
 // Imprime: La suma de números pares del 1 al 10 es: 30
-```
+````
 
 == Ejemplos
 
 Secuencia de Fibonacci usando un loop `for`:
 
-```kotlin
+````kotlin
 fun main() {
     val n = 10
     val fibonacci = mutableListOf(0, 1)
@@ -698,10 +699,10 @@ fun main() {
         fibonacci.add(fibonacci[i-1] + fibonacci[i-2])
     }
 }
-```
+````
 
 Sumar elementos de un array:
-```kotlin
+````kotlin
 fun main() {
     val array = arrayOf(1, 2, 3, 4, 5)
     var suma = 0
@@ -709,21 +710,22 @@ fun main() {
         suma += i
     }
 }
-```
+````
 
 Buscar un elemento en un array:
-```kotlin
+````kotlin
 fun main() {
     val array = arrayOf(1, 2, 3, 4, 5)
     val elemento = 3
     if (elemento in array) {
-        println("El elemento $elemento se encuentra en el array")
+        println("El elemento " + elemento + " se encuentra en el array")
     }
 }
-```
+````
 
-Recorrer un array en orden inverso usando índices:
-```kotlin
+
+Recorrer un array en orden inverso usando indices:
+````kotlin
 fun main() {
     val array = arrayOf(1, 2, 3, 4, 5)
     for (i in array.size - 1 downTo 0) {
@@ -731,7 +733,7 @@ fun main() {
     }
 }
 // Imprime: 5, 4, 3, 2, 1
-```
+````
 
 Recorrer un array en orden inverso usando el método `reversed()`:
 ```kotlin
@@ -815,44 +817,58 @@ fun main() {
 ````
 
 
+== Clases y Objetos
 
+La siguiente es una forma de definir una clase en Kotlin:
+```kotlin
+fun main() {
+    val persona = Persona("Juan", 25)
+    println(persona.nombre)
+    println(persona.edad)
+    persona.saludar()
+}
 
+class Persona(val nombre: String, var edad: Int) {
+    fun saludar() {
+        println("Hola, soy $nombre y tengo $edad años")
+    }
+}
 
-// == Tables and Wraps
+```
 
-// #wrap-content(
-//   figure(table(
-//     columns: 3,
-//     "Benchmark", "A/%", "B/%",
-//     table.hline(),
-//     "jo", "13.3", "33.2",
-//     "jojo", "11.1", "28.3",
-//     "ours", "100.0", "100.0",
-//     table.hline()
-//   ), caption: [A sample table, ours is the best.]),
-//   lorem(60),
-//   align: right
-// )
+Usando el constructor secundario:
+```kotlin
+fun main() {
+    val persona = Persona("Juan", 25)
+    println(persona.nombre)
+    println(persona.edad)
+    persona.saludar()
+}
 
-// == Codeblocks and Formulas
+class Persona(val nombre: String, var edad: Int) {
+    constructor(nombre: String) : this(nombre, 0) {
+        println("Constructor secundario llamado")
+    }
+}
+```
 
-// $
-// vb(x)_(t+1) &= sqrt(macron(alpha)_t) vb(x)_0 + sqrt(1 - macron(alpha)_t) vb(epsilon) quad &"Forward"\
-// vb(x)_(t-1) &= 1/sqrt(1 - beta_t) (vb(x)_t - (beta_t)/sqrt(1 - macron(alpha)_t) vb(epsilon)_theta (vb(x)_t, t)) + sqrt(beta_t) vb(epsilon) quad &"Backward"
-// $
+Usando el constructor secundario (alternativo):
 
-// ```python
-// // DDPM step
-// def p_sample_ddpm(self, model: nn.Module, x_t: torch.Tensor, t: torch.Tensor):
-//     eps = model(x_t, t)
-//     beta_t = self.betas[t][:, None, None, None]
-//     alpha_t = self.alphas[t][:, None, None, None]
-//     alpha_bar_t = self.alpha_bars[t][:, None, None, None]
-//     sqrt_one_minus_alpha_bar_t = self.sqrt_one_minus_alpha_bars[t][:, None, None, None]
-//     mean = 1 / torch.sqrt(alpha_t) * (x_t - beta_t / sqrt_one_minus_alpha_bar_t * eps)
-//     if (t == 0).all():
-//         return mean
-//     noise = torch.randn_like(x_t)
-//     sigma = torch.sqrt(beta_t)
-//     return mean + sigma * noise
-// ```
+```kotlin
+fun main() {
+    val persona = Persona("Juan")
+    println(persona.nombre)
+    println(persona.edad)
+    persona.saludar()
+}
+
+class Persona(val nombre: String, var edad: Int) {
+    var nombre : String = ""
+    var edad : Int = 0
+    constructor(nombre: String, edad: Int) {
+        this.nombre = nombre
+        this.edad = edad
+        println("Constructor secundario llamado")
+    }
+}
+```

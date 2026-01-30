@@ -966,3 +966,103 @@ Salida:
 ```
 ¡Hola desde Kotlin!
 ```
+
+= Usando Kotlin con Antigravity
+
+En esta seccion vamos a explorar una nueva forma de desarrollar aplicaciones con Kotlin usando el IDE desarrollado por google llamado Antigravity.
+
+Entrar a la pagina https://antigravity.google/
+
+Instalar el IDE, siguiendo las instrucciones de instalacion segun el sistema operativo. Luego, al abrir el IDE veras algo como esto:
+
+#figure(
+  image("images/antigravity.jpeg", width: 80%),
+  caption: [Interfaz del IDE Antigravity],
+)
+
+El siguiente paso es abrir crear una carpeta (Recomendamos llamarla ClaseKotlin) y abrirla con el IDE. Para esto podemos usar la opcion "Open Folder" que se muestra en la imagen.
+
+El siguiente paso es usar el chat que se encuentra en la parte derecha de la pantalla. Podemos usar el siguiente prompt como ejemplo:
+
+_"Para esta carpeta, que va a ser un proyecto en kotlin, me gustaria crear un archivo llamado main.kt, que contenga un codigo en un solo archivo, que me construya una clase llamada Person, que contenga el nombre, cedula, edad. La idea con esta clase es usar un a lista de personas, para poder ver como se crea, como se anexan personas y como se eliminan de la lista. Para esto usa unicamente el print en cada una de las operaciones sobre la lista para visualizar los cambios en la lista. Hacer todo en ingles."_
+
+El resultado de este prompt puede variar, pero se obtiene un archivo main.kt con el siguiente similar al siguiente codigo:
+
+````kotlin
+data class Person(val name: String, val id: String, val age: Int)
+
+fun main() {
+    println("--- Starting List Operations Demo ---")
+
+    // 1. Create a MutableList
+    val people = mutableListOf<Person>()
+    printList("List created (empty)", people)
+
+    // 2. Add persons
+    println("\n--- Adding People ---")
+    val p1 = Person("Alice", "A001", 30)
+    people.add(p1)
+    printList("Added Alice", people)
+
+    val p2 = Person("Bob", "B002", 25)
+    people.add(p2)
+    printList("Added Bob", people)
+
+    val p3 = Person("Charlie", "C003", 35)
+    people.add(p3)
+    printList("Added Charlie", people)
+
+    // 3. Remove persons
+    println("\n--- Removing People ---")
+    people.remove(p2) // Remove by object reference
+    printList("Removed Bob", people)
+
+    val personToRemoveId = "A001"
+    people.removeIf { it.id == personToRemoveId }
+    printList("Removed person with ID A001 (Alice)", people)
+
+    println("\n--- Demo Finished ---")
+}
+
+fun printList(operation: String, list: List<Person>) {
+    println("Operation: $operation")
+    if (list.isEmpty()) {
+        println("Current List: [Empty]")
+    } else {
+        println("Current List:")
+        list.forEach { println("  - $it") }
+    }
+}
+````
+
+El codigo generado puede ser ejecutado en la pagina de kotlin playground, https://play.kotlin.dev/
+
+== Ejercicios
+
+Se propone completar el siguiente prompt:
+
+_"En el archivo main_payment.kt quiero hacer un programa en Kotlin que ..... hacerlo todo en ingles. El prompt deberia incluir la implementación de la función `calculatePaymentAmount`:"_
+
+```kotlin
+fun calculatePaymentAmount(amount: Double, payments: Int, tea: Double): Double {
+    // Implementar el calculo del monto del pago mensual
+    return 0.0
+}
+
+fun main() {
+    val amount = 1000.0
+    val payments = 12
+    val tea = 0.05
+    val paymentAmount = calculatePaymentAmount(amount, payments, tea)
+    println("The payment amount is $paymentAmount")
+}
+```
+
+*Objetivo:* Crear un programa en Kotlin que calcule el monto de un pago mensual de una deuda, teniendo en cuenta:
+- El monto de la deuda (`amount`)
+- El número de pagos (`payments`)
+- El interés efectivo anual (`tea`)
+
+De la misma forma, recomendamos hacer otro programa, usando el interés efectivo mensual.
+
+

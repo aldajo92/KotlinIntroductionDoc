@@ -15,7 +15,7 @@
 
 #align(center)[
   _By Alejandro Gomez Florez (\@aldajo92)_ \
-  _Ingeniero de Control | Ms Matemáticas aplicadas_
+  _Ingeniero de Control | Ms Matemáticas aplicadas_ \
   _Universidad Nacional de Colombia | EAFIT_
 ]
 
@@ -1035,7 +1035,7 @@ fun printList(operation: String, list: List<Person>) {
 }
 ````
 
-El codigo generado puede ser ejecutado en la pagina de kotlin playground, https://play.kotlin.dev/
+El codigo generado puede ser ejecutado en la pagina de kotlin playground, https://play.kotlinlang.org/
 
 == Ejercicios
 
